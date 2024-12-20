@@ -31,14 +31,12 @@ class Solution:
                 else:
                     lps[i] = 0
                     i += 1
-
         return lps
 
     def minChar(self, s):
         n = len(s)
         rev = s[::-1]  
-
         concat = s + "$" + rev
         lps = self.computeLPSArray(concat)
-
+        
         return n - lps[-1]
